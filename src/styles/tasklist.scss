@@ -159,3 +159,64 @@ section.task-list {
     }
   }
 }
+
+.input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+
+  p {
+    font-size: 0.75rem;
+    transform: translateY(-70%);
+  }
+
+  input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    // left: -9999px;
+    // top: -9999px;
+
+    &:checked + span {
+      background-color: var(--green);
+
+      &:before {
+        left: calc(100% - 2px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  span {
+    display: flex;
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    border-radius: 100px;
+    background-color: #bfbfbf;
+    position: relative;
+    transition: background-color 0.2s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 21px;
+      height: 21px;
+      border-radius: 45px;
+      transition: 0.2s;
+      background: #fff;
+      box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+    }
+
+    &:active:before {
+      width: 32px;
+    }
+  }
+}

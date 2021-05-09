@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "server": "json-server -c server/server.json -w server/server.json --p 3333 -d 400"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0"
@@ -30,6 +32,7 @@
     "html-webpack-plugin": "^4.5.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
+    "json-server": "^0.16.3",
     "node-sass": "^5.0.0",
     "react-app-polyfill": "^2.0.0",
     "react-refresh": "^0.9.0",
